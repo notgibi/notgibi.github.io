@@ -831,6 +831,8 @@ nav {
   object-fit: contain;
   display: block;
   border-radius: var(--r-xl);
+  transition: opacity 0.4s ease;
+  opacity: 1;
 }
 
 /* Stage controls */
@@ -2015,11 +2017,14 @@ const imgWrap      = document.getElementById('certImgWrap');
 const certItems    = document.querySelectorAll('.cert-item');
 
 function showCert(idx, dir = 1) {
-  currentCert = ((idx % certImages.length) + certImages.length) % certImages.length;
+  currentCert = ((idx % certImages.length) + certImages.length) % certImages.length; 
+  stageImg.style.opacity = 0;
+  setTimeout(() => {
   stageImg.src = certImages[currentCert];
+  stageImg.style.opacity = 1;
   if (counter) {
     counter.textContent = `${currentCert + 1} / ${certImages.length}`;
-  }
+  }, 200));
 }
 
 function nextCert() {
