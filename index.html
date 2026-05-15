@@ -1997,8 +1997,7 @@ let isPlaying = true;
 const DELAY = 3000;
 
 const stageImg     = document.getElementById('stageImg');
-const placeholder  = document.getElementById('certPlaceholder');
-stageImg.src = "assets/certs/btl1.jpg";
+stageImg.src = certImages[currentCert];
 stageImg.style.display = "block";
 placeholder.style.display = "none";
 const overlay      = document.getElementById('certOverlay');
