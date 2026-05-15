@@ -2023,7 +2023,7 @@ function showCert(idx, dir = 1) {
   stageImg.style.opacity = 1;
   if (counter) {
     counter.textContent = `${currentCert + 1} / ${certImages.length}`;
-  }, 200));
+  }, 200);
 }
 
 function nextCert() {
@@ -2040,10 +2040,10 @@ setInterval(() => {
 }, 3000);
  
 
-  stage.style.setProperty('--flash-color', c.color + '55');
-  stage.classList.remove('flash-glow');
-  void stage.offsetWidth;
-  stage.classList.add('flash-glow');
+ // stage.style.setProperty('--flash-color', c.color + '55');
+ // stage.classList.remove('flash-glow');
+ // void stage.offsetWidth;
+//  stage.classList.add('flash-glow');
 
   syncListHighlight(currentCert);
   updateDots();
