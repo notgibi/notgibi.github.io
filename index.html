@@ -2017,10 +2017,9 @@ const certItems    = document.querySelectorAll('.cert-item');
 function showCert(idx, dir = 1) {
   currentCert = ((idx % certImages.length) + certImages.length) % certImages.length;
   stageImg.src = certImages[currentCert];
-    
-function showCert(idx) {
-  currentCert = (idx + certImages.length) % certImages.length;
-  stageImg.src = certImages[currentCert];
+  if (counter) {
+    counter.textContent = `${currentCert + 1} / ${certImages.length}`;
+  }
 }
 
 function nextCert() {
@@ -2085,7 +2084,7 @@ function buildThumbs() {
   thumbsWrap.innerHTML = '';
   certImages.forEach((c, i) => {
     const img = document.createElement('img');
-    img.src = c.src;
+    img.src = c;
     img.className = 'cert-thumb' + (i === 0 ? ' active' : '');
     img.onclick = () => { showCert(i, i >= currentCert ? 1 : -1); resetTimer(); };
     thumbsWrap.appendChild(img);
