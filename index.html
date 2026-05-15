@@ -2016,20 +2016,7 @@ const certItems    = document.querySelectorAll('.cert-item');
 function showCert(idx, dir = 1) {
   currentCert = ((idx % certImages.length) + certImages.length) % certImages.length;
   stageImg.src = certImages[currentCert];
-}
 
-function nextCert() {
-  showCert(currentCert + 1);
-}
-
-function prevCert() {
-  showCert(currentCert - 1);
-}
-
-// 5. auto slide
-setInterval(() => {
-  nextCert();
-}, 3000);
   const outC = dir > 0 ? 'out-left' : 'out-right';
   const inC  = dir > 0 ? 'in-right' : 'in-left';
 
