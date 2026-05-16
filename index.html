@@ -736,7 +736,6 @@ function buildThumbs() {
 function updateThumbs() {
   thumbsWrap.querySelectorAll('.cert-thumb').forEach((t, i) => {
     t.classList.toggle('active', i === currentIdx);
-    if (i === currentIdx) t.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
   });
 }
 
